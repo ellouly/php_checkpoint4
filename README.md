@@ -26,7 +26,7 @@ yarn install
 yarn encore dev
 
 ```
-Copier le .env en .env.local
+Copy the .env in .env.local
 
 ```
 bin.console d:d:c
