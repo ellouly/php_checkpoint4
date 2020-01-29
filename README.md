@@ -1,4 +1,4 @@
-# Php_checkpoint4 - WILD CIRCUS
+# Php Checkpoint 4 - WILD CIRCUS
 
 Projet Symfony 4
 
