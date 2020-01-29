@@ -23,7 +23,7 @@ Then run those commands at the root of the project:
 composer install  
 yarn install
 ```
-Copy the .env to .env.local 
+Copy the .env to .env.local with your database info
 ```
 php bin/console doctrine:database:create
 php bin/console doctrine:migration:migrate
