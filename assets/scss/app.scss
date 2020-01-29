@@ -1,0 +1,21 @@
+@import "vars";
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Cormorant+Garamond|Martel+Sans&display=swap');
+
+body {
+  background-image: url('../../assets/images/ciel-étoilé2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.menu {
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+.reseaux {
+  width: 40px;
+  height: 40px;
+  justify-content: space-around;
+}
