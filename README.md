@@ -1,4 +1,4 @@
-# Php_checkpoint4
+# Php_checkpoint4 - WILD CIRCUS
 
 Projet Symfony 4
 
@@ -8,10 +8,9 @@ Repository created for the last checkpoint of my Wild Code School training betwe
 
 Skills :  
 HTML5, CSS3, SCSS, Bootstrap,  
-PHP, Doctrine,  
-Symfony 4, Webpack Encore
-
-Here is the wireframe edited with MokeFlow:
+PHP, Doctrine, MySQL
+Symfony 4, Webpack Encore  
+Composer, Yarn, Node  
 
 ## How to set up the Project¶
 
@@ -19,18 +18,18 @@ You only need to get the project code and install the dependencies with Composer
 And follow this command:
 https://symfony.com/doc/current/setup.html#setting-up-an-existing-symfony-project  
 
-Then run those two commands:
+Then run those commands at the root of the project:
 ```
 composer install  
 yarn install
-yarn encore dev
-
 ```
-Copy the .env in .env.local
-
+Copy the .env to .env.local 
 ```
-bin.console d:d:c
-bin.console d:m:m
-bin.console d:f:l
-
+php bin/console doctrine:database:create
+php bin/console doctrine:migration:migrate
+```
+And at least run :
+```
+symfony server:start (to launch a local server)
+yarn encore dev (to launch your local server for assets)  
 ```
