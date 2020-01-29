@@ -1,12 +1,28 @@
-@import "vars";
-@import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Cormorant+Garamond|Martel+Sans&display=swap');
+$theme-colors: (
+        "success": #FFCE21,
+        "light": #1a2cc6,
+        "primary": #2137FF,
+        "secondary": #B38B00,
+);
 
 body {
   background-image: url('../../assets/images/ciel-étoilé2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+h1 {
+  font-family: 'Cinzel', sans-serif;
+}
+
+th {
+  font-family: 'Cormorant';
+  font-size: 16px;
+}
+
+td {
+  font-family: 'Martel';
 }
 
 .menu {
@@ -19,3 +35,7 @@ body {
   height: 40px;
   justify-content: space-around;
 }
+
+@import "vars";
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Cormorant+Garamond|Martel+Sans&display=swap');
