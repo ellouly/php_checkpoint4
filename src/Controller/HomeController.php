@@ -47,4 +47,28 @@ class HomeController extends AbstractController
             "categories" => $categoryRepository->findAll(),
         ]);
     }
+
+    /**
+     * @Route("/user/agenda", name="user_agenda")
+     */
+    public function agenda(): Response
+    {
+        return $this->render('wild/user_agenda.html.twig');
+    }
+
+    /**
+     * @Route("/user/details", name="user_details")
+     */
+    public function details(): Response
+    {
+        return $this->render('wild/user_details.html.twig');
+    }
+
+    /**
+     * @Route("/user/contact", name="user_contact")
+     */
+    public function contact(): Response
+    {
+        return $this->render('wild/user_contact.html.twig');
+    }
 }

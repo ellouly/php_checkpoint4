@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h3 class="text-center m-4">Formulaire de contact</h3><br>
+        {{ form_start(contactForm) }}
+        <div class="card">
+            <div class="col-md label-contact">
+                {{ form_label(contactForm.Prenom, 'Prénom') }}
+                {{ form_widget(contactForm.Prenom) }}
+            </div>
+        </div>
+        <div class="contact-form">
+            <div class="col-md label-contact">
+                {{ form_label(contactForm.Nom, 'Nom') }}
+                {{ form_widget(contactForm.Nom) }}
+            </div>
+        </div>
+        <div class="contact-form">
+            <div class="col-md label-contact">
+                {{ form_label(contactForm.Email, 'Email') }}
+                {{ form_widget(contactForm.Email) }}
+            </div>
+        </div>
+        <div class="contact-form">
+            <div class="col-md label-contact">
+                {{ form_label(contactForm.Objet, 'Objet') }}
+                {{ form_widget(contactForm.Objet) }}
+            </div>
+        </div>
+        <div class="contact-form">
+            <div class="col-md label-contact">
+                {{ form_label(contactForm.Message, 'Message') }}
+                {{ form_widget(contactForm.Message) }}
+            </div>
+        </div>
+        <div class="make-demand">
+            <a><button type="submit" class="btn btn-success button-demand">ENVOYER LA DEMANDE</button></a>
+        </div>
+    </div>
+    <div>
+        {{ form_end(contactForm) }}
+    </div>
+{% endblock %}
