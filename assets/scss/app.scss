@@ -4,14 +4,14 @@
 
 body {
   background-image: url('../../assets/images/ciel-étoilé2.jpg');
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   background-position: center;
 }
 
 footer {
   position: absolute;
-  margin-bottom: 0;
+  bottom: 0;
   margin-top: 100%;
   width: 100%;
 }
@@ -41,6 +41,10 @@ td {
   font-family: 'Martel Sans', sans-serif;
 }
 
+.ban img{
+  width: 100%;
+  box-shadow: 2px 4px 10px 4px #B38B00;
+}
 .btn-create {
   background-color: #B38B00;
   color: white;
