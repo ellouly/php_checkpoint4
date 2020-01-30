@@ -34,7 +34,7 @@ class Event
     private $image;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Place", mappedBy="name")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Place", mappedBy="events")
      */
     private $places;
 
@@ -44,14 +44,15 @@ class Event
     private $categories;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Agenda", inversedBy="event")
+     * @ORM\OneToMany(targetEntity="App\Entity\Agenda", mappedBy="event")
      */
-    private $agenda;
+    private $agendas;
 
     public function __construct()
     {
         $this->places = new ArrayCollection();
         $this->categories = new ArrayCollection();
+        $this->agendas = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -159,6 +160,41 @@ class Event
     public function setAgenda(?Agenda $agenda): self
     {
         $this->agenda = $agenda;
+
+        return $this;
+    }
+
+    public function getAgendas(): ?Agenda
+    {
+        return $this->agendas;
+    }
+
+    public function setAgendas(?Agenda $agendas): self
+    {
+        $this->agendas = $agendas;
+
+        return $this;
+    }
+
+    public function addAgenda(Agenda $agenda): self
+    {
+        if (!$this->agendas->contains($agenda)) {
+            $this->agendas[] = $agenda;
+            $agenda->setEvent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAgenda(Agenda $agenda): self
+    {
+        if ($this->agendas->contains($agenda)) {
+            $this->agendas->removeElement($agenda);
+            // set the owning side to null (unless already changed)
+            if ($agenda->getEvent() === $this) {
+                $agenda->setEvent(null);
+            }
+        }
 
         return $this;
     }

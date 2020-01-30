@@ -8,11 +8,11 @@
 
         <table class="table card">
             <thead>
-                <tr>
-                    <th>TITRE</th>
-                    <th>DESCRIPTION</th>
-                    <th>ACTIONS</th>
-                </tr>
+            <tr>
+                <th>Titre</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
             </thead>
             <tbody>
             {% for event in events %}
@@ -21,7 +21,6 @@
                     <td>{{ event.description }}</td>
                     <td>
                         <a class="btn-validate" href="{{ path('event_show', {'id': event.id}) }}">Accéder</a>
-                        <a class="btn-validate" href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
                     </td>
                 </tr>
             {% else %}
@@ -31,7 +30,5 @@
             {% endfor %}
             </tbody>
         </table>
-
-        <a href="{{ path('event_new') }}" class="btn-create">CREER UN NOUVEL EVENEMENT</a>
     </div>
 {% endblock %}

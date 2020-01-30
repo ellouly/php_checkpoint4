@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tarifs{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>LISTE DES TARIFS</h1>
+
+        <table class="table card">
+            <thead>
+            <tr>
+                <th>PRIX</th>
+                <th>TYPE</th>
+                <th>DESCRIPTION</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for category in categories %}
+                <tr>
+                    <td>{{ category.price }} €</td>
+                    <td>{{ category.type }}</td>
+                    <td>{{ category.description }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">Pas de catégorie en cours</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

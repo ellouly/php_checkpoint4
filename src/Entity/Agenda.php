@@ -24,12 +24,12 @@ class Agenda
     private $dateTime;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Event", mappedBy="agenda")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Event", inversedBy="agendas")
      */
     private $event;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Place", mappedBy="agenda")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Place", inversedBy="agendas")
      */
     private $place;
 
@@ -37,7 +37,6 @@ class Agenda
     {
         $this->dateTime = new ArrayCollection();
         $this->event = new ArrayCollection();
-        $this->place = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -141,6 +140,36 @@ class Agenda
                 $place->setAgenda(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Place[]
+     */
+    public function getPlaces(): Collection
+    {
+        return $this->places;
+    }
+
+    /**
+     * @return Collection|Event[]
+     */
+    public function getEvents(): Collection
+    {
+        return $this->events;
+    }
+
+    public function setEvent(?Event $event): self
+    {
+        $this->event = $event;
+
+        return $this;
+    }
+
+    public function setPlace(?Place $place): self
+    {
+        $this->place = $place;
 
         return $this;
     }
