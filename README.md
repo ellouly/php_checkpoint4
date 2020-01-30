@@ -12,9 +12,9 @@ PHP, Doctrine, MySQL
 Symfony 4, Webpack Encore  
 Composer, Yarn, Node  
 
-Here is the MDC : https://snipboard.io/F1yzag.jpg
-Here is the Backlog : https://snipboard.io/aTg4ot.jpg
-Here is the Style guide : https://bit.ly/2S5pf4W
+Here is the MDC : https://snipboard.io/9EczIq.jpg  
+Here is the Backlog : https://snipboard.io/68ktYT.jpg  
+Here is the Style guide : https://bit.ly/2S5pf4W  
 
 ## How to set up the Project¶
 
