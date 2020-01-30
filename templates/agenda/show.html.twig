@@ -3,24 +3,26 @@
 {% block title %}Agenda{% endblock %}
 
 {% block body %}
-    <h1>Agenda</h1>
-
+<div class="container">
+    <h1>Date de l'évènement</h1>
     <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ agenda.id }}</td>
-            </tr>
             <tr>
                 <th>DateTime</th>
                 <td>{{ agenda.dateTime ? agenda.dateTime|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('agenda_index') }}">back to list</a>
-
-    <a href="{{ path('agenda_edit', {'id': agenda.id}) }}">edit</a>
-
-    {{ include('agenda/_delete_form.html.twig') }}
+    <div class="button row justify-content-around mt-4">
+        <div>
+            <a class="btn-show" href="{{ path('agenda_index') }}">Retour à la liste</a>
+        </div>
+        <div>
+            {{ include('agenda/_delete_form.html.twig') }}
+        </div>
+        <div>
+            <a class="btn-create" href="{{ path('agenda_edit', {'id': agenda.id}) }}">Modifier</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

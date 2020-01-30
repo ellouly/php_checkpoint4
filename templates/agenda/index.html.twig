@@ -3,34 +3,33 @@
 {% block title %}Agenda{% endblock %}
 
 {% block body %}
-    <h1>AGENDA DE NOS SPECTACLES</h1>
-        <h2>SAISON 2019-2020</h2>
+<div class="container">
+    <h1>AGENDA SAISON 2019-2020</h1>
 
-    <table class="table">
+    <table class="table card">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>DateTime</th>
-                <th>actions</th>
+                <th>DATES</th>
+                <th>ACTIONS</th>
             </tr>
         </thead>
         <tbody>
         {% for agenda in agendas %}
             <tr>
-                <td>{{ agenda.id }}</td>
                 <td>{{ agenda.dateTime ? agenda.dateTime|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('agenda_show', {'id': agenda.id}) }}">show</a>
-                    <a href="{{ path('agenda_edit', {'id': agenda.id}) }}">edit</a>
+                    <a class="btn-validate" href="{{ path('agenda_show', {'id': agenda.id}) }}">Accéder</a>
+                    <a class="btn-validate" href="{{ path('agenda_edit', {'id': agenda.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Pas de dates en cours</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('agenda_new') }}">Create new</a>
+    <a href="{{ path('agenda_new') }}" class="btn-create">CREER UNE NOUVELLE DATE</a>
+</div>
 {% endblock %}
