@@ -26,29 +26,6 @@ class ContactController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="contact_new", methods={"GET","POST"})
-     */
-    public function new(Request $request): Response
-    {
-        $contact = new Contact();
-        $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($contact);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('contact_index');
-        }
-
-        return $this->render('contact/new.html.twig', [
-            'contact' => $contact,
-            'form' => $form->createView(),
-        ]);
-    }
-
-    /**
      * @Route("/{id}", name="contact_show", methods={"GET"})
      */
     public function show(Contact $contact): Response
@@ -57,38 +34,21 @@ class ContactController extends AbstractController
             'contact' => $contact,
         ]);
     }
-
     /**
-     * @Route("/{id}/edit", name="contact_edit", methods={"GET","POST"})
-     */
-    public function edit(Request $request, Contact $contact): Response
+    * @Route("/contact", name="contact")
+    */
+    public function contact(Request $request)
     {
-        $form = $this->createForm(ContactType::class, $contact);
+        $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
-
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('contact_index');
+            $form = $form->getData();
+            $this->addFlash('success', 'Merci pour votre message ! Nous revenons vers vous rapidement');
+            return $this->redirectToRoute('wild_index');
         }
-
-        return $this->render('contact/edit.html.twig', [
-            'contact' => $contact,
-            'form' => $form->createView(),
+        return $this->render('contact/_contactForm.html.twig', [
+            'contactForm' => $form->createView(),
         ]);
     }
 
-    /**
-     * @Route("/{id}", name="contact_delete", methods={"DELETE"})
-     */
-    public function delete(Request $request, Contact $contact): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$contact->getId(), $request->request->get('_token'))) {
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($contact);
-            $entityManager->flush();
-        }
-
-        return $this->redirectToRoute('contact_index');
-    }
 }

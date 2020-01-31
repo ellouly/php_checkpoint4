@@ -5,20 +5,17 @@
 body {
   background-image: url('../../assets/images/ciel-étoilé2.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center;
+  mini-height: 100%;
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  margin-top: 100%;
   width: 100%;
+  margin-top: auto;
 }
 
-html
-{
-  height:100%
+html {
+  height: 100%;
 }
 
 h1 {
@@ -29,6 +26,11 @@ h1 {
 
 h2 {
   color: whitesmoke;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+h3 {
+  color: #B38B00;
   font-family: 'Cormorant Garamond', serif;
 }
 

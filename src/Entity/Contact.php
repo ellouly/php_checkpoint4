@@ -18,26 +18,31 @@ class Contact
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Merci d'entrer votre prénom")
      */
     private $firstName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Merci d'entrer votre nom")
      */
     private $lastName;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Merci d'entrer votre adrese mail")
      */
     private $eMail;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Merci d'entrer l'objet de votre message")
      */
     private $object;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="Merci d'entrer votre message")
      */
     private $message;
 

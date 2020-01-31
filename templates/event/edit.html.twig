@@ -7,9 +7,13 @@
         <h1>Modifier {{ event.name }}</h1>
 
         {{ include('event/_form.html.twig', {'button_label': 'Valider'}) }}
-
-        <a class="btn-create" href="{{ path('event_index') }}">Retour à la liste</a>
-
-        {{ include('event/_delete_form.html.twig') }}
+    </div>
+    <div class="button row justify-content-around mt-4">
+        <div>
+            {{ include('event/_delete_form.html.twig') }}
+        </div>
+        <div>
+            <a class="btn-create" href="{{ path('event_index') }}">Retour à la liste</a>
+        </div>
     </div>
 {% endblock %}

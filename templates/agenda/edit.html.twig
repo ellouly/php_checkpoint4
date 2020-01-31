@@ -7,9 +7,13 @@
         <h1>Modifier date</h1>
 
         {{ include('agenda/_form.html.twig', {'button_label': 'Valider'}) }}
-
-        <a class="btn-create" href="{{ path('agenda_index') }}">Retour à la liste</a>
-
-        {{ include('agenda/_delete_form.html.twig') }}
+    </div>
+        <div class="button row justify-content-around mt-4">
+        <div>
+            {{ include('agenda/_delete_form.html.twig') }}
+        </div>
+        <div>
+            <a class="btn-create" href="{{ path('agenda_index') }}">Retour à la liste</a>
+        </div>
     </div>
 {% endblock %}
