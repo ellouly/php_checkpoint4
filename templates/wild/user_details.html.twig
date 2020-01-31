@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}A propos{% endblock %}
+
+{% block body %}
+    <div class="container text-center mb-5">
+        <h1>A PROPOS DE NOUS</h1>
+        <div class=" justify-content-around card">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{ asset('build/images/Artistes.jpg') }}" class="img-fluid img-concert" alt="Artistes et interprètes">
+                </div>
+                <div class="col-lg-6">
+                    <h3>Artistes et interprètes</h3>
+                    <p>Au centre de l’énergie créative du WILD CIRCUS, il y a nos artistes. Nous prenons soin de nos
+                        athlètes, acrobates et artistes, et laissons leur créativité s’épanouir alors qu’ils collaborent
+                        avec l’équipe de création. Ces personnes sont animées d’une passion qui les pousse à constamment
+                        vouloir dépasser leurs limites pour créer de nouveaux numéros palpitants. Chaque artiste détermine
+                        l’originalité du Cirque du Soleil, et sa contribution est essentielle au succès de la troupe.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class=" justify-content-around card">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3>La musique et le chant</h3>
+                    <p>Nos spectacles sont plus qu’une expérience visuelle! La musique joue un rôle considérable pour animer nos
+                        créations. La musique de chacune des productions du WILD CIRCUS reflète les thèmes abordés dans le
+                        spectacle, et contribue à établir et à maintenir le ton de l’action qui se déroule sur scène. Avec une
+                        trame musicale composée par l’un de nos compositeurs, nos spectacles sont appuyés par une musique
+                        originale, au lieu de maquettes préenregistrées par des artistes de premier plan tels que les Beatles
+                        et Michael Jackson.
+                    </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{{ asset('build/images/Chant.jpeg') }}" class="img-fluid img-concert" alt="Musique et chant">
+                </div>
+            </div>
+        </div>
+        <div class=" justify-content-around card">
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="{{ asset('build/images/Décors.png') }}" class="img-fluid img-concert" alt="Création des décors">
+                </div>
+                <div class="col-lg-6">
+                    <h3>La création des décors</h3>
+                    <p>Les décors et les équipements de scène jouent un rôle essentiel pour évoquer la thématique et
+                        rendre l’atmosphère d’un spectacle du WILD CIRCUS. Avec un souci particulier pour les
+                        principes esthétiques et pour la sécurité de nos artistes, les décors sont conçus avec
+                        l’intention de créer un environnement unique dans lequel nos artistes de cirque peuvent
+                        s’épanouir.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

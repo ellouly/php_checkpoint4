@@ -2,12 +2,20 @@
 
 {% block body %}
 
-    <div>
-        <h1>BIENVENUE AU WILD CIRCUS !</h1>
+    <div class="container text-center mb-5">
+        <h1>! BIENVENUE AU WILD CIRCUS !</h1>
     </div>
-    <div>
-        <img alt="ban" src="{{ assets('images/bannière.jpeg') }}">
+    <div class="container text-center mb-5 ban">
+        <img alt="ban" src="{{ asset('build/images/ban-accueil.jpg') }}">
     </div>
-
-
+{#{% for event in events %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{ asset('build/images/chapiteau.jpg') }}" class="card-img-top" alt="Spectacle WILD CIRCUS">
+        <div class="card-body">
+            <h5 class="card-title">{{ event.name}}</h5>
+            <p class="card-text">{{ event.description}}</p>
+            <a href="{{ path('event_show', {'id': event.id}) }}" class="btn btn-primary">Détails</a>
+        </div>
+    </div>
+    {% endfor %}#}
 {% endblock %}

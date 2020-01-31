@@ -1,37 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Category index{% endblock %}
+{% block title %}Tarifs{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+<div class="container">
+    <h1>LISTE DES TARIFS</h1>
 
-    <table class="table">
+    <table class="table card">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Price</th>
-                <th>Type</th>
-                <th>actions</th>
+                <th>PRIX</th>
+                <th>TYPE</th>
+                <th>DESCRIPTION</th>
+                <th>ACTIONS</th>
             </tr>
         </thead>
         <tbody>
         {% for category in categories %}
             <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.price }}</td>
+                <td>{{ category.price }} €</td>
                 <td>{{ category.type }}</td>
+                <td>{{ category.description }}</td>
                 <td>
-                    <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
+                    <a class="btn-validate" href="{{ path('category_show', {'id': category.id}) }}">Accéder</a>
+                    <a class="btn-validate" href="{{ path('category_edit', {'id': category.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="4">Pas de catégorie en cours</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('category_new') }}">Create new</a>
+    <a href="{{ path('category_new') }}" class="btn-create">CREER UNE NOUVELLE CATEGORIE</a>
+</div>
 {% endblock %}

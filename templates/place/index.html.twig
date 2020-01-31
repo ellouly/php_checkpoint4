@@ -1,35 +1,35 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Place index{% endblock %}
+{% block title %}Lieux{% endblock %}
 
 {% block body %}
-    <h1>Place index</h1>
+<div class="container">
+    <h1>LISTE DES LIEUX</h1>
 
-    <table class="table">
+    <table class="table card">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
+                <th>NOM</th>
+                <th>ACTIONS</th>
             </tr>
         </thead>
         <tbody>
         {% for place in places %}
             <tr>
-                <td>{{ place.id }}</td>
                 <td>{{ place.name }}</td>
                 <td>
-                    <a href="{{ path('place_show', {'id': place.id}) }}">show</a>
-                    <a href="{{ path('place_edit', {'id': place.id}) }}">edit</a>
+                    <a class="btn-validate" href="{{ path('place_show', {'id': place.id}) }}">Accéder</a>
+                    <a class="btn-validate" href="{{ path('place_edit', {'id': place.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Pas de lieu en cours</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('place_new') }}">Create new</a>
+    <a href="{{ path('place_new') }}" class="btn-create">CREER UN NOUVEAU LIEU</a>
+</div>
 {% endblock %}

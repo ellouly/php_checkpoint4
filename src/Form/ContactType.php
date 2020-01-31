@@ -4,19 +4,33 @@ namespace App\Form;
 
 use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
-class ContactType extends AbstractType
+class tsContactType extends AbstractType
 {
-    public function buildForm(FormBuilderInterface $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('firstName')
-            ->add('lastName')
-            ->add('eMail')
-            ->add('object')
-            ->add('message')
+            ->add('Prenom', TextType::class, [
+                'constraints' => [new NotBlank()]
+            ])
+            ->add('Nom', TextType::class, [
+                'constraints' => [new NotBlank()]
+            ])
+            ->add('eMail', EmailType::class, [
+                'constraints' => [new NotBlank()]
+            ])
+            ->add('object', TextType::class, [
+                'constraints' => [new NotBlank()]
+            ])
+            ->add('message', TextareaType::class, [
+                'constraints' => [new NotBlank()]
+            ])
         ;
     }
 

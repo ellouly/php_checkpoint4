@@ -1,0 +1,39 @@
+<div class="container card">
+    <h1 class="text-center m-4">FORMULAIRE DE CONTACT</h1><br>
+    {{ form_start(contactForm) }}
+    <div>
+        <div class="col-md">
+            {{ form_label(contactForm.Prenom, 'Prénom') }}
+            {{ form_widget(contactForm.Prenom) }}
+        </div>
+    </div>
+    <div>
+        <div class="col-md">
+            {{ form_label(contactForm.Nom, 'Nom') }}
+            {{ form_widget(contactForm.Nom) }}
+        </div>
+    </div>
+    <div>
+        <div class="col-md">
+            {{ form_label(contactForm.Email, 'Email') }}
+            {{ form_widget(contactForm.Email) }}
+        </div>
+    </div>
+    <div>
+        <div class="col-md">
+            {{ form_label(contactForm.Objet, 'Objet') }}
+            {{ form_widget(contactForm.Objet) }}
+        </div>
+    </div>
+    <div>
+        <div class="col-md">
+            {{ form_label(contactForm.Message, 'Message') }}
+            {{ form_widget(contactForm.Message) }}
+        </div>
+    </div>
+        <div>
+            <a><button type="submit" class="btn-create">ENVOYER LA DEMANDE</button></a>
+        </div>
+    </div>
+<div>
+    {{ form_end(contactForm) }}
