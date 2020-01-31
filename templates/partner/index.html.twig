@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Partenaires{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>LISTE DES PARTENAIRES</h1>
+
+    <table class="table card">
+        <thead>
+            <tr>
+                <th>NOM</th>
+                <th>LIEN INTERNET</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partner in partners %}
+            <tr>
+                <td>{{ partner.name }}</td>
+                <td>{{ partner.link }}</td>
+                <td>
+                    <a class="btn-validate" href="{{ path('partner_show', {'id': partner.id}) }}">Accéder</a>
+                    <a class="btn-validate" href="{{ path('partner_edit', {'id': partner.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Pas de partenaire en cours</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('partner_new') }}" class="btn-create">CREER UN NOUVEAU PARTENAIRE</a>
+</div>
+{% endblock %}

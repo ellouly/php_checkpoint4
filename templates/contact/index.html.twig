@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Messages{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>LISTE DES MESSAGES</h1>
+
+        <table class="table card">
+            <thead>
+                <tr>
+                    <th>PRENOM</th>
+                    <th>NOM</th>
+                    <th>EMAIL</th>
+                    <th>OBJET</th>
+                    <th>MESSAGE</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for contact in contacts %}
+                <tr>
+                    <td>{{ contact.firstName }}</td>
+                    <td>{{ contact.lastName }}</td>
+                    <td>{{ contact.eMail }}</td>
+                    <td>{{ contact.object }}</td>
+                    <td>{{ contact.message }}</td>
+                    <td>
+                        <a class="btn-validate" href="{{ path('contact_show', {'id': contact.id}) }}">Accéder</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="7">Pas de message en cours</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

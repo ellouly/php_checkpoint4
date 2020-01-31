@@ -1,0 +1,98 @@
+@import "vars";
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Cinzel+Decorative|Cormorant+Garamond|Martel+Sans&display=swap');
+
+body {
+  background-image: url('../../assets/images/ciel-étoilé2.jpg');
+  background-size: cover;
+  background-position: center;
+  mini-height: 100%;
+}
+
+footer {
+  width: 100%;
+  margin-top: auto;
+}
+
+html {
+  height: 100%;
+}
+
+h1 {
+  color: #B38B00;
+  font-family: 'Cinzel Decorative', cursive;
+  margin-top: 30px;
+}
+
+h2 {
+  color: whitesmoke;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+h3 {
+  color: #B38B00;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+th {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+}
+
+td {
+  font-family: 'Martel Sans', sans-serif;
+}
+
+.ban img{
+  width: 100%;
+  box-shadow: 2px 4px 10px 4px #B38B00;
+}
+.btn-create {
+  background-color: #B38B00;
+  color: white;
+  margin: 25px;
+  padding: 10px;
+  border: 2px solid whitesmoke;
+  border-radius: 5px;
+}
+
+.btn-show {
+  background-color: whitesmoke;
+  border: 2px solid #2137FF;
+  border-radius: 5px;
+  color: #2137FF;
+  margin-top: 40px;
+  padding: 5px;
+}
+
+.btn-validate {
+  border: 2px solid #2137FF;
+  border-radius: 5px;
+  color: #2137FF;
+  margin-top: 40px;
+  padding: 5px;
+}
+
+.card {
+  background-color: whitesmoke;
+  margin: 40px 0px;
+  padding: 20px;
+  border: 5px solid #B38B00;
+  border-radius: 10px;
+}
+
+.container {
+  width: 70%;
+  margin: auto;
+}
+.menu {
+  padding: 10px;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.reseaux {
+  width: 40px;
+  height: 40px;
+  justify-content: space-around;
+}

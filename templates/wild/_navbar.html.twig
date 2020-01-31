@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-light text-success">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+        <a class="navbar-brand" href="/"><img src="" alt="">WILD CIRCUS</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Accueil<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('user_events') }}">Evènements</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('user_artists') }}">Artistes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('user_categories') }}">Tarifs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('user_agenda') }}">Agenda</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('user_details') }}">A propos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('user_contact') }}">Contact</a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <button class="btn  my-2 my-sm-0" type="submit"><a class="nav-link btn-outline-success" href="{{ path('event_index') }}">Espace administrateur</a></button>
+        </form>
+    </div>
+</nav>

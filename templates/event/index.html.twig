@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Evènements{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>LISTE DES EVENEMENTS</h1>
+
+        <table class="table card">
+            <thead>
+                <tr>
+                    <th>TITRE</th>
+                    <th>DESCRIPTION</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for event in events %}
+                <tr>
+                    <td>{{ event.name }}</td>
+                    <td>{{ event.description }}</td>
+                    <td>
+                        <a class="btn-validate" href="{{ path('event_show', {'id': event.id}) }}">Accéder</a>
+                        <a class="btn-validate" href="{{ path('event_edit', {'id': event.id}) }}">Modifier</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">Pas d'évènement en cours</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('event_new') }}" class="btn-create">CREER UN NOUVEL EVENEMENT</a>
+    </div>
+{% endblock %}
